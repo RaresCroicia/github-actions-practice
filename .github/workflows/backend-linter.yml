@@ -31,6 +31,10 @@ jobs:
       - name: Install Dependencies
         working-directory: ./backend
         run: npm install
+
+      - name: Install Linters
+        working-directory: ./backend
+        run: npm install --save-dev eslint eslint-config-airbnb-base eslint-config-prettier eslint-plugin-import eslint-plugin-prettier prettier
       
       - name: Run Linters
         uses: wearerequired/lint-action@v2
