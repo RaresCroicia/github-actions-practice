@@ -7,16 +7,12 @@ on:
       - '.github/**'
     branches:
       - main
-    paths:
-      - 'backend/**'
   pull_request:
     paths-ignore:
       - 'README.md'
       - '.github/**'
     branches:
       - main
-    paths:
-      - 'backend/**'
 
 jobs:
   run-linters:
