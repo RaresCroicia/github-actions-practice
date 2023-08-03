@@ -7,12 +7,16 @@ on:
       - '.github/**'
     branches:
       - main
+    paths:
+      - 'backend/**'
   pull_request:
     paths-ignore:
       - 'README.md'
       - '.github/**'
     branches:
       - main
+    paths:
+      - 'backend/**'
 
 jobs:
   run-linters:
@@ -28,14 +32,12 @@ jobs:
         with:
           node-version: '18.x'
       
-      - name: Move to backend directory
-        run: cd backend
-      
       - name: Install Dependencies
+        working-directory: ./backend
         run: npm install
       
-
       - name: Run Linters
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
+          eslint_dir: ./backend
